@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\MenuEvent;
+use App\Listeners\MenuListener;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -18,6 +20,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        MenuEvent::class => [
+            MenuListener::class
+        ]
     ];
 
     /**
@@ -27,6 +32,6 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+
     }
 }

@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
     protected function shortSchedule(\Spatie\ShortSchedule\ShortSchedule $shortSchedule)
     {
         // this artisan command will run every second
-        $shortSchedule->command('telegram:get_updates')->everySecond(5);
+        $shortSchedule->command('telegram:get_updates')->everySecond(3);
     }
 
     /**
